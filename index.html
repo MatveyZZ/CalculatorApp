@@ -1,82 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> <!-- Определяет тип документа как HTML5 -->
+<html lang="en"> <!-- Начало HTML-документа с указанием языка (английский) -->
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Calculator</title>
+    <meta charset="UTF-8"> <!-- Устанавливает кодировку документа на UTF-8 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Указывает браузеру использовать режим совместимости с IE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Настройки для адаптивного дизайна на мобильных устройствах -->
+    <link rel="stylesheet" href="style.css"> <!-- Подключает внешний файл стилей (CSS) -->
+    <title>Calculator</title> <!-- Устанавливает заголовок страницы, который отображается на вкладке браузера -->
 </head>
 <body>
     
-    <div class="wrapper">
-        <section class="screen">
-            0
+    <div class="wrapper"> <!-- Обертка для всего содержимого калькулятора -->
+        <section class="screen"> <!-- Секция для отображения текущего значения калькулятора -->
+            0 <!-- Начальное значение на экране калькулятора -->
         </section>
 
-        <section class="calc-buttons">
-            <div class="calc-button-row">
-                <button class="calc-button double">
+        <section class="calc-buttons"> <!-- Секция для кнопок калькулятора -->
+            <div class="calc-button-row"> <!-- Первая строка кнопок -->
+                <button class="calc-button double"> <!-- Кнопка для очистки (C) с двойным размером -->
                     C
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для удаления последнего символа (&larr;) -->
                     &larr;
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для деления (&divide;) -->
                     &divide;
                 </button>
             </div>
 
-            <div class="calc-button-row">
-                <button class="calc-button">
+            <div class="calc-button-row"> <!-- Вторая строка кнопок -->
+                <button class="calc-button"> <!-- Кнопка для числа 7 -->
                     7
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для числа 8 -->
                     8
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для числа 9 -->
                     9
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для умножения (&times;) -->
                     &times;
                 </button>
             </div>
 
-            <div class="calc-button-row">
-                <button class="calc-button">
+            <div class="calc-button-row"> <!-- Третья строка кнопок -->
+                <button class="calc-button"> <!-- Кнопка для числа 4 -->
                     4
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для числа 5 -->
                     5
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для числа 6 -->
                     6
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для вычитания (&minus;) -->
                     &minus;
                 </button>
             </div>
 
-            <div class="calc-button-row">
-                <button class="calc-button">
+            <div class="calc-button-row"> <!-- Четвертая строка кнопок -->
+                <button class="calc-button"> <!-- Кнопка для числа 1 -->
                     1
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для числа 2 -->
                     2
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для числа 3 -->
                     3
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для сложения (&plus;) -->
                     &plus;
                 </button>
             </div>
 
-            <div class="calc-button-row">
-                <button class="calc-button triple">
+            <div class="calc-button-row"> <!-- Пятая строка кнопок -->
+                <button class="calc-button triple"> <!-- Кнопка для числа 0 с тройным размером -->
                     0
                 </button>
-                <button class="calc-button">
+                <button class="calc-button"> <!-- Кнопка для равенства (&equals;) -->
                     &equals;
                 </button>
             </div>
@@ -85,6 +85,6 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Подключает внешний файл JavaScript для функциональности калькулятора -->
 </body>
 </html>

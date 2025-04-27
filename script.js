@@ -1,89 +1,89 @@
-let runningTotal = 0;
-let buffer = "0";
-let previousOperator;
+let runningTotal = 0; // Переменная для хранения текущей суммы
+let buffer = "0"; // Переменная для хранения текущего ввода пользователя
+let previousOperator; // Переменная для хранения предыдущего оператора
 
-const screen = document.querySelector('.screen');
+const screen = document.querySelector('.screen'); // Получает элемент экрана калькулятора
 
-function buttonClick(value){
-    if (isNaN(value)){
-        handleSymbol(value);
+function buttonClick(value) { // Функция, вызываемая при нажатии кнопки
+    if (isNaN(value)) { // Проверяет, является ли значение не числом (т.е. оператором)
+        handleSymbol(value); // Обрабатывает символ (оператор)
     } else {
-        handleNumber(value);
+        handleNumber(value); // Обрабатывает число
     }
-    screen.innerText = buffer;
+    screen.innerText = buffer; // Обновляет экран с текущим значением buffer
 }
 
-function handleSymbol(symbol){
-    switch(symbol){
-        case 'C':
-            buffer = '0';
-            runningTotal = 0;
+function handleSymbol(symbol) { // Функция для обработки символов (операторов)
+    switch (symbol) { // Использует switch для обработки различных символов
+        case 'C': // Если символ 'C' (очистка)
+            buffer = '0'; // Сбрасывает buffer на '0'
+            runningTotal = 0; // Сбрасывает runningTotal на 0
             break;
-        case '=':
-            if (previousOperator === null){
-                return;
+        case '=': // Если символ '=' (равно)
+            if (previousOperator === null) { // Проверяет, был ли предыдущий оператор
+                return; // Если нет, ничего не делает
             }
-            flushOperation(parseInt(buffer));
-            previousOperator = null;
-            buffer = runningTotal;
-            runningTotal = 0;
+            flushOperation(parseInt(buffer)); // Выполняет операцию с текущим числом
+            previousOperator = null; // Сбрасывает предыдущий оператор
+            buffer = runningTotal; // Устанавливает buffer на значение runningTotal
+            runningTotal = 0; // Сбрасывает runningTotal на 0
             break;
-        case '←':
-            if (buffer.length === 1){
-                buffer = '0';
+        case '←': // Если символ '←' (удаление последнего символа)
+            if (buffer.length === 1) { // Если длина buffer равна 1
+                buffer = '0'; // Устанавливает buffer на '0'
             } else {
-                buffer = buffer.toString(0, buffer.length - 1);
+                buffer = buffer.toString(0, buffer.length - 1); // Удаляет последний символ из buffer
             }
             break;
         case '+':
         case '-':
         case '×':
-        case '÷':
-            handleMath(symbol);
+        case '÷': // Если символ является математическим оператором
+            handleMath(symbol); // Обрабатывает математическую операцию
             break;
     }
 }
 
-function handleMath(symbol){
-    if (buffer === '0'){
+function handleMath(symbol) { // Функция для обработки математических операций
+    if (buffer === '0') { // Если buffer равен '0', ничего не делает
         return;
     }
 
-    const intBuffer = parseInt(buffer);
+    const intBuffer = parseInt(buffer); // Преобразует buffer в целое число
 
-    if (runningTotal === 0){
-        runningTotal = intBuffer;
+    if (runningTotal === 0) { // Если runningTotal равен 0
+        runningTotal = intBuffer; // Устанавливает runningTotal на значение intBuffer
     } else {
-        flushOperation(intBuffer);
+        flushOperation(intBuffer); // Выполняет операцию с текущим числом
     }
-    previousOperator = symbol;
-    buffer = '0';
+    previousOperator = symbol; // Устанавливает предыдущий оператор
+    buffer = '0'; // Сбрасывает buffer на '0'
 }
 
-function flushOperation(intBuffer){
-    if (previousOperator === '+'){
-        runningTotal += intBuffer;
-    } else if (previousOperator === '-'){
-        runningTotal -= intBuffer;
-    } else if (previousOperator === '×'){
-        runningTotal *= intBuffer;
-    } else if (previousOperator === '÷'){
-        runningTotal /= intBuffer;
+function flushOperation(intBuffer) { // Функция для выполнения операции
+    if (previousOperator === '+') { // Если предыдущий оператор '+'
+        runningTotal += intBuffer; // Добавляет intBuffer к runningTotal
+    } else if (previousOperator === '-') { // Если предыдущий оператор '-'
+        runningTotal -= intBuffer; // Вычитает intBuffer из runningTotal
+    } else if (previousOperator === '×') { // Если предыдущий оператор '×'
+        runningTotal *= intBuffer; // Умножает runningTotal на intBuffer
+    } else if (previousOperator === '÷') { // Если предыдущий оператор '÷'
+        runningTotal /= intBuffer; // Делит runningTotal на intBuffer
     }
 }
 
-function handleNumber(numberString){
-    if (buffer === "0"){
-        buffer = numberString;
+function handleNumber(numberString) { // Функция для обработки чисел
+    if (buffer === "0") { // Если buffer равен "0"
+        buffer = numberString; // Устанавливает buffer на введенное число
     } else {
-        buffer += numberString;
+        buffer += numberString; // Добавляет введенное число к buffer
     }
 }
 
-function init(){
-    document.querySelector('.calc-buttons').addEventListener('click', function(event){
-        buttonClick(event.target.innerText);
+function init() { // Функция инициализации
+    document.querySelector('.calc-buttons').addEventListener('click', function(event) { // Добавляет обработчик событий на кнопки калькулятора
+        buttonClick(event.target.innerText); // Вызывает buttonClick с текстом нажатой кнопки
     });
 }
 
-init();
+init(); // Вызывает функцию инициализации

@@ -1,104 +1,104 @@
-html{
-    box-sizing: border-box;
-    height: 100%;
+html {
+    box-sizing: border-box; /* Устанавливает модель box-sizing для html, чтобы ширина и высота включали padding и border */
+    height: 100%; /* Устанавливает высоту html на 100% от родительского элемента (обычно это body) */
 }
 
 *,
 *::before,
-*::after{
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+*::after {
+    box-sizing: inherit; /* Устанавливает box-sizing для всех элементов и псевдоэлементов на значение, унаследованное от html */
+    margin: 0; /* Убирает отступы по умолчанию у всех элементов */
+    padding: 0; /* Убирает внутренние отступы по умолчанию у всех элементов */
 }
 
-body{
-    align-items: center;
-    background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4);
-    display: flex;
-    font-family: 'Dosis', sans-serif;
-    font-display: swap;
-    height: inherit;
-    justify-content: center;
+body {
+    align-items: center; /* Выравнивает элементы по центру по вертикали (в flex-контейнере) */
+    background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4); /* Устанавливает фоновый градиент с тремя цветами */
+    display: flex; /* Устанавливает body как flex-контейнер для использования flexbox */
+    font-family: 'Dosis', sans-serif; /* Устанавливает шрифт для текста на странице */
+    font-display: swap; /* Указывает браузеру использовать запасной шрифт, пока загружается основной шрифт */
+    height: inherit; /* Устанавливает высоту body на 100% от родительского элемента (html) */
+    justify-content: center; /* Выравнивает элементы по центру по горизонтали (в flex-контейнере) */
 }
 
-.wrapper{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
-    color: #232323;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background: rgba(255, 255, 255, 0.30);
-    border: 1px solid rgba(255, 255, 255, 0.34);
-    flex-basis: 400px;
-    height: 540px;
-    padding: 20px 35px;
+.wrapper {
+    backdrop-filter: blur(5.5px); /* Применяет размытие фона к элементу с радиусом 5.5 пикселей */
+    -webkit-backdrop-filter: blur(5.5px); /* Поддержка размытия фона для браузеров на основе WebKit (например, Safari) */
+    border-radius: 16px; /* Устанавливает скругление углов элемента на 16 пикселей */
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1); /* Добавляет тень к элементу с заданными смещением и размерами */
+    color: #232323; /* Устанавливает цвет текста внутри элемента */
+    backdrop-filter: blur(4px); /* Применяет размытие фона к элементу с радиусом 4 пикселя (дублируется, можно удалить) */
+    -webkit-backdrop-filter: blur(4px); /* Поддержка размытия фона для браузеров на основе WebKit (дублируется, можно удалить) */
+    background: rgba(255, 255, 255, 0.30); /* Устанавливает полупрозрачный белый фон с 30% непрозрачностью */
+    border: 1px solid rgba(255, 255, 255, 0.34); /* Устанавливает границу элемента с полупрозрачным белым цветом */
+    flex-basis: 400px; /* Устанавливает базовый размер элемента в flex-контейнере на 400 пикселей */
+    height: 540px; /* Устанавливает высоту элемента на 540 пикселей */
+    padding: 20px 35px; /* Устанавливает внутренние отступы: 20 пикселей сверху и снизу, 35 пикселей слева и справа */
 }
 
-.screen{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.01);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
-    color: #232323;
-    font-size: 35px;
-    overflow: auto;
-    padding: 20px;
-    text-align: right;
-    width: 326px;
+.screen {
+    backdrop-filter: blur(5.5px); /* Применяет размытие фона к экрану калькулятора с радиусом 5.5 пикселей */
+    -webkit-backdrop-filter: blur(5.5px); /* Поддержка размытия фона для браузеров на основе WebKit */
+    background: rgba(255, 255, 255, 0.75); /* Устанавливает полупрозрачный белый фон с 75% непрозрачностью */
+    border: 1px solid rgba(255, 255, 255, 0.01); /* Устанавливает границу элемента с почти прозрачным белым цветом */
+    border-radius: 16px; /* Устанавливает скругление углов элемента на 16 пикселей */
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1); /* Добавляет тень к элементу с заданными смещением и размерами */
+    color: #232323; /* Устанавливает цвет текста внутри элемента */
+    font-size: 35px; /* Устанавливает размер шрифта текста внутри элемента на 35 пикселей */
+    overflow: auto; /* Устанавливает поведение переполнения: добавляет прокрутку, если содержимое превышает размеры элемента */
+    padding: 20px; /* Устанавливает внутренние отступы на 20 пикселей со всех сторон */
+    text-align: right; /* Выравнивает текст внутри элемента по правому краю */
+    width: 326px; /* Устанавливает ширину элемента на 326 пикселей */
 }
 
-.calc-button-row{
-    display: flex;
-    justify-content: space-between;
-    margin: 5% 0;
+.calc-button-row {
+    display: flex; /* Устанавливает элемент как flex-контейнер для размещения кнопок в строку */
+    justify-content: space-between; /* Распределяет пространство между кнопками, оставляя равные отступы */
+    margin: 5% 0; /* Устанавливает вертикальные отступы (сверху и снизу) на 5% */
 }
 
-.calc-button{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.01);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
-    color: #232323;
-    flex-basis: 20%;
-    font-family: inherit;
-    font-size: 24px;
-    height: 65px;
+.calc-button {
+    backdrop-filter: blur(5.5px); /* Применяет размытие фона к кнопке с радиусом 5.5 пикселей */
+    -webkit-backdrop-filter: blur(5.5px); /* Поддержка размытия фона для браузеров на основе WebKit */
+    background: rgba(255, 255, 255, 0.75); /* Устанавливает полупрозрачный белый фон с 75% непрозрачностью */
+    border: 1px solid rgba(255, 255, 255, 0.01); /* Устанавливает границу кнопки с почти прозрачным белым цветом */
+    border-radius: 16px; /* Устанавливает скругление углов кнопки на 16 пикселей */
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1); /* Добавляет тень к кнопке с заданными смещением и размерами */
+    color: #232323; /* Устанавливает цвет текста внутри кнопки */
+    flex-basis: 20%; /* Устанавливает базовый размер кнопки в flex-контейнере на 20% от ширины родителя */
+    font-family: inherit; /* Устанавливает шрифт кнопки таким же, как у родительского элемента */
+    font-size: 24px; /* Устанавливает размер шрифта текста внутри кнопки на 24 пикселя */
+    height: 65px; /* Устанавливает высоту кнопки на 65 пикселей */
 }
 
-.calc-button:last-child{
-    backdrop-filter: blur(5.5px);
-    -webkit-backdrop-filter: blur(5.5px);
-    background: rgba(255, 255, 255, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.01);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1);
-    color: #fff;
-    background: #d52880;
+.calc-button:last-child {
+    backdrop-filter: blur(5.5px); /* Применяет размытие фона к последней кнопке с радиусом 5.5 пикселей */
+    -webkit-backdrop-filter: blur(5.5px); /* Поддержка размытия фона для браузеров на основе WebKit */
+    background: rgba(255, 255, 255, 0.75); /* Устанавливает полупрозрачный белый фон с 75% непрозрачностью (дублируется) */
+    border: 1px solid rgba(255, 255, 255, 0.01); /* Устанавливает границу кнопки с почти прозрачным белым цветом (дублируется) */
+    border-radius: 16px; /* Устанавливает скругление углов кнопки на 16 пикселей (дублируется) */
+    box-shadow: 0 4px 30px rgba(35, 35, 35, 0.1); /* Добавляет тень к кнопке с заданными смещением и размерами (дублируется) */
+    color: #fff; /* Устанавливает цвет текста внутри последней кнопки на белый */
+    background: #d52880; /* Устанавливает фон последней кнопки на яркий розовый цвет */
 }
 
-.calc-button:last-child:hover{
-    background-color: inherit;
-    color: inherit;
+.calc-button:last-child:hover {
+    background-color: inherit; /* Устанавливает фоновый цвет последней кнопки на значение, унаследованное от родителя при наведении */
+    color: inherit; /* Устанавливает цвет текста последней кнопки на значение, унаследованное от родителя при наведении */
 }
 
-.calc-button:hover{
-    background-color: inherit;
+.calc-button:hover {
+    background-color: inherit; /* Устанавливает фоновый цвет кнопки на значение, унаследованное от родителя при наведении */
 }
 
-.calc-button:active{
-    background-color: #ffef78;
+.calc-button:active {
+    background-color: #ffef78; /* Устанавливает фоновый цвет кнопки на желтый при нажатии (активном состоянии) */
 }
 
-.double{
-    flex-basis: 47%;
+.double {
+    flex-basis: 47%; /* Устанавливает базовый размер кнопки с классом "double" в flex-контейнере на 47% от ширины родителя */
 }
 
-.triple{
-    flex-basis: 73%;
+.triple {
+    flex-basis: 73%; /* Устанавливает базовый размер кнопки с классом "triple" в flex-контейнере на 73% от ширины родителя */
 }
